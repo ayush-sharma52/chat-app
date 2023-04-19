@@ -55,7 +55,7 @@ socket.on('send message',(msg,cb)=>{
 
 socket.on('sendLocation',(coords,cb)=>{
     const user=getUser(socket.id);
-    io.to(user.room).emit('locationMessage',generateMessage(`https://google.com/maps?q=${coords.latitude},${coords.longitude}`,user.username));
+    io.to(user.room).emit('locationMessage',generateMessage(`https://google.com/maps?q=${coords.latitude},${coords.longitude}`,user.username));   
     cb('location shared');
 })
 
